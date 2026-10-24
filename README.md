@@ -1,4 +1,4 @@
-# RP — 面向真实私聊体验的独立角色扮演系统
+# Linger — 面向真实私聊体验的独立角色扮演系统
 
 [中文](README.md) · [English](README.en.md)
 
@@ -12,7 +12,7 @@
 
 ---
 
-## 一、为什么它的私聊更有“真人感”？
+## 一、私聊更有“真人感”!
 
 传统 RP 往往容易陷入两种割裂感：要么像在写网文（发一句“好累”，模型先写三段环境光线、眼神流转和心理剖析说明书，最后机械反问“你呢？”）；要么是“你不说话，世界就彻底静止”，或者靠傻瓜定时器每隔半小时盲目查岗（“在干嘛？”）。
 
@@ -200,4 +200,4 @@ RP/
 
 实际依赖在 `backend/pyproject.toml`、`web/package.json` 与 `web/package-lock.json` 中列出。依赖包及第三方项目保留各自许可证；本仓库未附带下载的参考项目或游戏语料。本次源码公开尚未指定项目许可证。
 
-协议与设计参考包括 [OneBot v11](https://github.com/botuniverse/onebot-11)、[NapCatQQ](https://github.com/NapNeko/NapCatQQ)、[SillyTavern](https://github.com/SillyTavern/SillyTavern)、[HDS-Interlude](https://github.com/ISEKAI-MomoiCore/HDS-Interlude)、[Character Card V2](https://github.com/malfoyslastname/character-card-spec-v2)、[Character Card V3](https://github.com/kwaroran/character-card-spec-v3)。参考项目不作为本项目源码一并分发。
+
