@@ -1,0 +1,5 @@
+# 与 compose.yaml 合用：向宿主机上的 NapCat 提供仅本机可达的反向连接入口。
+services:
+  rp:
+    ports:
+      - "127.0.0.1:18765:18765"

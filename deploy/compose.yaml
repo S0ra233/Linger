@@ -1,0 +1,55 @@
+name: rp
+services:
+  rp:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: rp-server:local
+    command: ["serve", "--host", "0.0.0.0", "--port", "18765"]
+    environment:
+      RP_PUBLIC_URL: "https://${RP_DOMAIN:?请在部署环境中设置 RP_DOMAIN}"
+      RP_COOKIE_SECURE: "true"
+    volumes:
+      - rp_data:/var/lib/rp
+      - rp_keys:/var/lib/rp-secrets
+    networks: [gateway]
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 45s
+    read_only: true
+    tmpfs:
+      - /tmp:rw,nosuid,noexec,size=128m
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  caddy:
+    image: caddy:2-alpine
+    environment:
+      RP_DOMAIN: "${RP_DOMAIN:?请在部署环境中设置 RP_DOMAIN}"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks: [gateway]
+    depends_on: [rp]
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+networks:
+  gateway:
+    name: rp-gateway
+volumes:
+  rp_data:
+  rp_keys:
+  caddy_data:
+  caddy_config:

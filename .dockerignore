@@ -1,0 +1,19 @@
+# 仅白名单源码进入构建上下文，禁止传输本地数据、密钥、参考项目和工具目录。
+**
+!backend/
+!backend/pyproject.toml
+!backend/src/
+!backend/src/rp_server/
+!backend/src/rp_server/**
+backend/src/**/__pycache__/
+backend/src/**/*.pyc
+!web/
+!web/package.json
+!web/package-lock.json
+!web/index.html
+!web/tsconfig*.json
+!web/vite.config.ts
+!web/src/
+!web/src/**
+!deploy/
+!deploy/Dockerfile

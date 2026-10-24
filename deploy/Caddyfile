@@ -1,0 +1,7 @@
+{$RP_DOMAIN} {
+    # Caddy 自动管理证书；不记录访问日志，避免请求和连接元数据长期留存。
+    reverse_proxy rp:18765 {
+        # 管理 SSE 使用低延迟流式输出；WebSocket 由反向代理透传升级。
+        flush_interval -1
+    }
+}

@@ -1,0 +1,282 @@
+{
+  "extracted_at": "2026-10-15",
+  "source_project": "author-harness/desktop",
+  "files": [
+    {
+      "source": "author-harness/desktop/llm/__init__.py",
+      "source_sha256": "bbecd653c644c97f019553cd176b454a0a886c22580b6b0783f620f81ca5a29f",
+      "target": "backend/src/rp_server/llm/__init__.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/attempts.py",
+      "source_sha256": "9f12d776d592317cfb8ec87e75f410522bf40428efcb5a73e472366ceb4f24e6",
+      "target": "backend/src/rp_server/llm/attempts.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/contracts.py",
+      "source_sha256": "a87f9bc5f5154d595ea6cf8bc122f88fccb4d99f37b9ebe2fdc1b45c77d5e2b5",
+      "target": "backend/src/rp_server/llm/contracts.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/diagnostics.py",
+      "source_sha256": "defd0b4cf40fa28f603adf8c85d80c863cd33faf4757bbff7dd98ffe38eecc78",
+      "target": "backend/src/rp_server/llm/diagnostics.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/history_projection.py",
+      "source_sha256": "67827e4ca0bab1d4fee59068f920a0b6d5c7e5234fadee3f10d647cbe133369f",
+      "target": "backend/src/rp_server/llm/history_projection.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/messages.py",
+      "source_sha256": "e8fbc17e87e01464f1abccd7e22c2d3ae0e740615c0a7ed3e221d587408fcfdf",
+      "target": "backend/src/rp_server/llm/messages.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/models.py",
+      "source_sha256": "45a1572d6e271db2af4215c0f6b89a5b5bbd785a00cdd2dc76de7d3d132ef3d2",
+      "target": "backend/src/rp_server/llm/models.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/protocols.py",
+      "source_sha256": "96f20cd78ce96494edfb3e0e89812545bbff93129a73f7792a2639e76614c634",
+      "target": "backend/src/rp_server/llm/protocols.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/provider_profiles.py",
+      "source_sha256": "70cc8b566194684eae33b920e3b023912fdc09744965b3b72fb147a8d783d935",
+      "target": "backend/src/rp_server/llm/provider_profiles.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/__init__.py",
+      "source_sha256": "5beeb4dc2d47d5a942c7a67e7dfcc1a5ee8b6bd0bfac2433777aa709f4ead309",
+      "target": "backend/src/rp_server/llm/providers/__init__.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/anthropic.py",
+      "source_sha256": "28f0422f37a083f47ef2b21a38f877d09a4e5cc9f4ec4084fad3c04c93cb3e5a",
+      "target": "backend/src/rp_server/llm/providers/anthropic.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/cache_control.py",
+      "source_sha256": "9c2930c5c9bb9ea07410d2b35fe69683764bdd599c2cd10e93e8e29323df2e77",
+      "target": "backend/src/rp_server/llm/providers/cache_control.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/chat_completions/__init__.py",
+      "source_sha256": "474c74aef053282a9f3500a0fd61862b15c31bbae6686cda6dad2be73c8bd94a",
+      "target": "backend/src/rp_server/llm/providers/chat_completions/__init__.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/chat_completions/provider.py",
+      "source_sha256": "356d6165b86bc89f321123556a48c6bacc739044920d02822ba53976e5b11f77",
+      "target": "backend/src/rp_server/llm/providers/chat_completions/provider.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/chat_completions/response.py",
+      "source_sha256": "79d8f45c8f142f78760aff35458796ac2565fad31efeffa00f1c58627d1d5b5b",
+      "target": "backend/src/rp_server/llm/providers/chat_completions/response.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/chat_completions/stream.py",
+      "source_sha256": "b768832d78dafeeaca20e7507e1071ff259c547c518fa50e9213900b3e1de951",
+      "target": "backend/src/rp_server/llm/providers/chat_completions/stream.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/factory.py",
+      "source_sha256": "efee7ab26ca7817c5a66f912088214b134e60412a3b38823ebe201682f178000",
+      "target": "backend/src/rp_server/llm/providers/factory.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/gemini.py",
+      "source_sha256": "e381b91528e5e82f031fb3c89c8ef4e911d1f63ef7669e8347a515a30aaa2ae6",
+      "target": "backend/src/rp_server/llm/providers/gemini.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/http.py",
+      "source_sha256": "3508db241cfa4c6c682c9497f4a7cb249c9ebf35ee3f244ef0e0f2e641991669",
+      "target": "backend/src/rp_server/llm/providers/http.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/image_input.py",
+      "source_sha256": "7a04f4330bc9fc80dd0e4d825035785aa2cc1912b254ba324ac0ae0e4fbcd72a",
+      "target": "backend/src/rp_server/llm/providers/image_input.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/protocol_messages.py",
+      "source_sha256": "eec912371215c6f334022a06fbb6a51a8f5562045527c3d39624433055e1b92b",
+      "target": "backend/src/rp_server/llm/providers/protocol_messages.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/reasoning.py",
+      "source_sha256": "befd0be88991757a308e0fffcc151da0187e00e7518e6f06e3fb8238041f997b",
+      "target": "backend/src/rp_server/llm/providers/reasoning.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/responses.py",
+      "source_sha256": "c96c1c84b6550e9b40e04e2e65aed12f60d17f3c637018c04d8513b053e0249b",
+      "target": "backend/src/rp_server/llm/providers/responses.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/retry.py",
+      "source_sha256": "58883e7f940c3b71a7e245e244e6a54feddb18b273384097f54cfba5c8891511",
+      "target": "backend/src/rp_server/llm/providers/retry.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/providers/stream_events.py",
+      "source_sha256": "acb745d0b37462784997c2f334e8b9ae39d8c590d40a863fd5551277afbf8014",
+      "target": "backend/src/rp_server/llm/providers/stream_events.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/reasoning.py",
+      "source_sha256": "1a1cd445df2ee4119cc1b2e9cac1c4a0ab4ce04877ad3f0d1d19d11901eef0ae",
+      "target": "backend/src/rp_server/llm/reasoning.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/reasoning_output.py",
+      "source_sha256": "e395d8b21c00b08c0e418a15bbb7586f8fae34dfed0132116129a2b511036b79",
+      "target": "backend/src/rp_server/llm/reasoning_output.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/rules.py",
+      "source_sha256": "b5cb2d4a11ae6ac76eb62735f275217a8b4cb287ec071903edb92d4ecf5dcf1b",
+      "target": "backend/src/rp_server/llm/rules.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/usage.py",
+      "source_sha256": "fe2ff21953e49ba376212400ddb8fd5cdec4c11a787f4e6c2d02d58aec84a325",
+      "target": "backend/src/rp_server/llm/usage.py"
+    },
+    {
+      "source": "author-harness/desktop/llm/validation.py",
+      "source_sha256": "f63af04c8b17866b004d58099f69c8569af1180b3f5e3f78dbf92081c9335071",
+      "target": "backend/src/rp_server/llm/validation.py"
+    },
+    {
+      "source": "author-harness/desktop/attachments/store.py",
+      "source_sha256": "2f65ef604c79b582296424c7db2728072bfe9fb819d04994a4ad9eeba57f3a38",
+      "target": "backend/src/rp_server/attachments/store.py"
+    },
+    {
+      "source": "author-harness/desktop/local/extensions/rag/embedding.py",
+      "source_sha256": "38b0386b0681e5a74bab8a2e3800e86b494970e32e63fc36f2dfe32d6cdaaaa8",
+      "target": "backend/src/rp_server/llm/embedding.py"
+    },
+    {
+      "source": "author-harness/desktop/runtime/context/budget.py",
+      "source_sha256": "44093c0efb71bc157e1da7bf55bb8da745c4b5436a93cf61bc2ee8a1fbec4774",
+      "target": "backend/src/rp_server/roleplay/budget.py",
+      "mode": "3A：选择性提取粗估预算函数，适配统一消息和显式模型窗口；不是厂商 tokenizer"
+    },
+    {
+      "source": "author-harness/desktop/local/extensions/rag/text.py",
+      "source_sha256": "484b9fb85006a62d2f199294f953c63e18dcfd215ece37e1aa431d67046bc2a9",
+      "target": "backend/src/rp_server/information/text.py",
+      "mode": "3B：直接复用纯文本 terms/chunks，保留中文双字与单字查询、段落窗口、重叠和原文偏移；不读取旧插件数据"
+    },
+    {
+      "source": "author-harness/desktop/local/extensions/rag/store.py",
+      "source_sha256": "4113cf417d326ac6d9046852a59645991e9efd52b51f9f23c41bd68575e4732d",
+      "target": "backend/src/rp_server/information/semantic.py",
+      "mode": "3B 语义：借鉴 pending_vectors/save_vectors/embedding_ready/semantic 的版本联结、float32、维度与排名边界；按 RP 私有作用域、分批读取、持久任务与取消重写，未复制原实现或用户数据"
+    }
+  ],
+  "adapted_references": [
+    {
+      "source": "author-harness/desktop/runtime/agent/loop.py",
+      "source_sha256": "e510fb2664480b67941c5c0a8e0f6c41a436b19a74892f215cc11d9a3a5e68b8",
+      "target": "backend/src/rp_server/roleplay/engine.py",
+      "mode": "2B：阅读并按 RP 范围重写最小循环，未整包复制；保留完整响应、调用 ID 校验、结果关联、参数延续和取消传播原则"
+    },
+    {
+      "source": "author-harness/desktop/tools/registry.py",
+      "source_sha256": "3fc6cdf34674af4e124feb04fd025828bfb738b5f97ab03f0594f0d77c1849be",
+      "target": "backend/src/rp_server/roleplay/engine.py",
+      "mode": "2B：借鉴白名单、完整 JSON 校验和 ToolResult 关联；未引入桌面 mutation gate、文件工具或插件权限"
+    },
+    {
+      "source": "author-harness/desktop/runtime/context/compaction.py",
+      "source_sha256": "fd4d57431735adbebc6bf1c89ed2bca032a695995b59749a2d11df39ad5c9750",
+      "target": "backend/src/rp_server/roleplay/context.py",
+      "mode": "3A：借鉴完整轮次、保留近期历史及独立辅助请求；按 RP 确认台词、持久来源水位和候选提交重写，不复制桌面日志与配置依赖"
+    },
+    {
+      "source": "author-harness/desktop/application/prompt_presets.py",
+      "source_sha256": "bb5cd82c9505510cf696493b74b5b305fe963ee524eff45c90bc8c918e59e218",
+      "target": "backend/src/rp_server/llm/presets.py",
+      "mode": "3A 预设：借鉴配置库与连接／权限分离、保存与另存及快照思想；按 SQLite 不可变版本和模型差异重写，未复制桌面持久存储"
+    },
+    {
+      "source": "author-harness/desktop/prompts/config.py",
+      "source_sha256": "72e6f71c5efe8e919794e16ddb094d6989cfdd258b792b104c800160b693cdfe",
+      "target": "backend/src/rp_server/llm/preset_models.py",
+      "mode": "3A 预设：借鉴分类提示词、已知字段校验与配置快照；不读取私人预设 JSON，不复制桌面前置对话或执行权限"
+    },
+    {
+      "source": "author-harness/desktop/local/extensions/rag/store.py",
+      "source_sha256": "4113cf417d326ac6d9046852a59645991e9efd52b51f9f23c41bd68575e4732d",
+      "target": "backend/src/rp_server/information/service.py",
+      "mode": "3B：参考当前版本联结、倒排词频、BM25、稳定片段与有界排名；按实例私有记忆及角色授权资料库重写，未复制独立数据库／目录扫描／向量执行器"
+    },
+    {
+      "source": "author-harness/desktop/mcp/client.py",
+      "source_sha256": "c8fdc4b37178ac17ffc4e3b86bcb57f8117413f54cc8c6694dc892d60763a531",
+      "target": "backend/src/rp_server/integrations/mcp_client.py",
+      "referenced_at": "2026-10-16",
+      "mode": "MCP 补充：参考连接初始化、目录分页及官方 SDK 适配；RP 自行实现 v1 HTTP 适配，不复制 stdio／桌面生命周期；仅借鉴，未复制源码"
+    },
+    {
+      "source": "author-harness/desktop/mcp/pool.py",
+      "source_sha256": "34e1927199a224f0f598de2a7f92cbdfcefa29b20bdc9786707504e9f3f7b8ea",
+      "target": "backend/src/rp_server/integrations/mcp_scope.py",
+      "referenced_at": "2026-10-16",
+      "mode": "MCP 补充：参考同任务持有 SDK 上下文、每轮复用和工具快照核对；按 RP 运行版本／授权重写，不复制桌面 worker；仅借鉴，未复制源码"
+    },
+    {
+      "source": "author-harness/desktop/mcp/tools.py",
+      "source_sha256": "e620fde2e0a60193b76b36111f62f9c1634706da633ef2d8e81a4b1edd451498",
+      "target": "backend/src/rp_server/integrations/mcp_client.py",
+      "referenced_at": "2026-10-16",
+      "mode": "MCP 补充：参考名称隔离、正文／结构结果裁剪和省略媒体；按 RP 字节预算、未知不重试重写；仅借鉴，未复制源码"
+    },
+    {
+      "source": "author-harness/desktop/mcp/settings.py",
+      "source_sha256": "8725d11a0291edddc3fb5158e6a2a5ac904372606db0552ad28e6c7b27aa1da9",
+      "target": "backend/src/rp_server/integrations/mcp_models.py",
+      "referenced_at": "2026-10-16",
+      "mode": "MCP 补充：参考连接字段与目录限制；RP 使用 SQLite／加密凭据／生活线授权，不读旧配置；仅借鉴，未复制源码"
+    },
+    {
+      "source": "author-harness/desktop/tools/registry.py",
+      "source_sha256": "3fc6cdf34674af4e124feb04fd025828bfb738b5f97ab03f0594f0d77c1849be",
+      "target": "backend/src/rp_server/integrations/mcp_scope.py",
+      "referenced_at": "2026-10-16",
+      "mode": "MCP 补充：复用既有阅读并核对完整参数、调用 ID 与作用域；RP 仅开放管理员授权工具，不带桌面命令／文件能力；仅借鉴，未复制源码"
+    },
+    {
+      "source": "author-harness/desktop/runtime/runs.py",
+      "source_sha256": "9b5bf752d85b6f609392d6f06cc9f6ec21264fabf43defd55d2efe4c9ccaf06e",
+      "target": "backend/src/rp_server/roleplay/life.py",
+      "referenced_at": "2026-10-16",
+      "mode": "阶段 4：参考运行结果分型与只保存本地异常位置／类型；按 RP 后台运行、节点状态与事件表重写，不复制运行器；仅借鉴，未复制源码"
+    },
+    {
+      "source": "author-harness/desktop/runtime/conversations/revisions.py",
+      "source_sha256": "1ad691aae35ae2d4b106330b9cd9870b39cc233042c84e54153fbc38675c97a7",
+      "target": "backend/src/rp_server/roleplay/life.py",
+      "referenced_at": "2026-10-16",
+      "mode": "阶段 4：参考身份／修订和追加历史分离、旧修订不覆盖事实；按 RP 当前输入版本、独立生活设置版本和投递边界重写，不复制桌面会话修订器；仅借鉴，未复制源码"
+    }
+  ],
+  "adaptations": [
+    "包名前缀 desktop.llm 改为 rp_server.llm",
+    "附件默认位置改为 RP 数据目录",
+    "提供商规则改为显式服务端配置",
+    "Qt 图片转换改为 Pillow",
+    "Embedding 凭据及客户端改为服务端注入",
+    "ModelConfig、ReplayState 增加 connection_id，原生续接须匹配连接身份",
+    "HTTP 客户端由应用生命周期持有，取消检查时关闭响应并保留结果状态",
+    "连接配置与凭据在同一事务提交，API 不返回凭据引用或明文",
+    "2A：附件增加网络字节接收入口，复用独占文件写入与元数据最后发布机制，不读取远端路径"
+  ]
+}

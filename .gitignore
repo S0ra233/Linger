@@ -1,0 +1,35 @@
+# Runtime data and credentials
+/data/
+/.env
+/.env.*
+/deploy/.env
+/deploy/.env.*
+!/deploy/.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.sqlite*
+*.db
+*.log
+# Local environments and generated files
+/.venv/
+/.rp-install/
+__pycache__/
+*.py[cod]
+*.egg-info/
+/backend/build/
+/backend/dist/
+/web/node_modules/
+/web/dist/
+# Private/reference work does not belong to the public snapshot
+/其他/
+/test/
+/garden-gpt-image-2/
+/docs/
+/PLAN.md
+/学习记录.md
+/应用提示词总表.md
+/AGENTS.md
+/.agents/
+/.codex/

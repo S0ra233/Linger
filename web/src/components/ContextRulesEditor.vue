@@ -1,0 +1,31 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import type { StrategyRules } from '../strategy-types'
+const form = defineModel<StrategyRules>({ required: true })
+const mode = computed({ get: () => form.value.strategy, set: (value: StrategyRules['strategy']) => {
+  if (value === 'continuity' && form.value.strategy !== 'continuity') form.value.trim_on_material_change = false
+  if (value !== 'legacy') {
+    form.value.retain_turns = Math.max(40, form.value.retain_turns)
+    form.value.history_trigger_turns = Math.max(form.value.retain_turns + 1, form.value.history_trigger_turns)
+  }
+  form.value.strategy = value
+} })
+</script>
+<template>
+  <el-form-item label="模式"><el-radio-group v-model="mode"><el-radio-button v-if="mode === 'legacy'" value="legacy">旧版配置</el-radio-button><el-radio-button value="cost">成本优先</el-radio-button><el-radio-button value="continuity">对话连续性优先</el-radio-button></el-radio-group></el-form-item>
+  <el-form-item label="上下文窗口"><div class="inline-actions"><el-input-number v-model="form.context_window" :min="2048" :max="10000000" :value-on-clear="null" controls-position="right" placeholder="继承默认值" /><el-tooltip content="填入 65536 tokens；留空继承模型默认值，实际容量受接口上限限制。"><el-button @click="form.context_window = 65536">64K</el-button></el-tooltip></div></el-form-item>
+  <div class="strategy-rule-preview">达到 <strong>{{ form.history_trigger_turns }}</strong> 轮后，保留最近 <strong>{{ form.retain_turns }}</strong> 轮。<el-tooltip content="只从模型上下文中移出旧记录，原始聊天仍保存在数据库。"><button type="button" class="help-dot" aria-label="移出旧对话的含义">?</button></el-tooltip></div>
+  <div class="form-two-columns"><el-form-item label="触发移出的完整轮数"><el-input-number v-model="form.history_trigger_turns" :min="form.retain_turns + 1" :max="2000" /></el-form-item><el-form-item label="保留最近完整轮数"><el-input-number v-model="form.retain_turns" :min="mode === 'legacy' ? 1 : 40" :max="1000" /></el-form-item></div>
+  <el-form-item v-if="mode === 'continuity'" label="轻摘要目标 tokens"><el-input-number v-model="form.summary_target_tokens" :min="128" :max="8000" /><span class="field-hint">移出前调用摘要模型；普通追加沿用原摘要。</span></el-form-item>
+  <el-collapse class="quiet-collapse">
+    <el-collapse-item v-if="mode !== 'legacy'" title="前置生活状态与缓存" name="state"><el-form-item label="生活状态注入"><el-select v-model="form.state_injection"><el-option value="off" label="关闭（使用近期对话，状态按需读取）" /><el-option value="snapshot" label="低频状态快照" /></el-select></el-form-item><el-form-item v-if="form.state_injection === 'snapshot'" label="每完成多少次回复后刷新"><el-input-number v-model="form.state_refresh_turns" :min="1" :max="2000" /></el-form-item><p class="field-hint">生活记录照常保存；不前置逐轮描写。刷新快照会重建其后的缓存。</p><el-alert v-if="form.state_injection === 'snapshot' && form.state_refresh_turns < 10" title="刷新较频繁，历史缓存可能经常重建。" type="warning" :closable="false" /></el-collapse-item>
+    <el-collapse-item title="窗口与移出条件" name="window"><div class="form-two-columns">
+      <el-form-item label="历史Token触发量（可留空）"><el-input-number v-model="form.history_trigger_tokens" :min="2048" :max="8000000" :value-on-clear="null" /></el-form-item><el-form-item label="移出后历史Token目标"><el-input-number v-model="form.history_target_tokens" :min="1024" :max="8000000" :value-on-clear="null" /></el-form-item>
+      <el-form-item label="安全余量 tokens"><el-input-number v-model="form.safety_margin" :min="0" :max="64000" /></el-form-item><el-form-item label="额外输出预留 tokens"><el-input-number v-model="form.output_reserve" :min="1" :max="1000000" /></el-form-item>
+    </div><p class="field-hint">实际窗口受模型能力限制；回复预留至少采用模型输出上限。</p><el-form-item label="前置资料变化时同步缩减旧历史"><el-switch v-model="form.trim_on_material_change" /></el-form-item><el-alert v-if="mode === 'continuity' && form.trim_on_material_change" title="资料频繁变化时，联动移出也会增加摘要调用。" type="warning" :closable="false" /></el-collapse-item>
+    <el-collapse-item title="模型检索与资料预算" name="information"><el-form-item label="允许模型搜索记忆与知识库"><el-switch v-model="form.allow_information_tools" /><span class="field-hint">由模型调用工具决定，不按轮数自动检索。</span></el-form-item><el-form-item label="保留已采用的检索快照"><el-switch v-model="form.retain_retrieval_snapshot" /></el-form-item>
+      <div class="form-two-columns"><el-form-item label="工具检索方式"><el-select v-model="form.retrieval_mode"><el-option value="keyword" label="关键词" /><el-option value="semantic" label="语义" /><el-option value="hybrid" label="混合" /></el-select></el-form-item><el-form-item label="工具候选数量"><el-input-number v-model="form.retrieval_top_k" :min="1" :max="12" /></el-form-item><el-form-item label="检索快照总预算 tokens"><el-input-number v-model="form.retrieval_budget_tokens" :min="0" :max="64000" /></el-form-item><el-form-item label="快照超额后目标 tokens"><el-input-number v-model="form.retrieval_target_tokens" :min="0" :max="form.retrieval_budget_tokens" /></el-form-item><el-form-item label="世界书预算 tokens"><el-input-number v-model="form.worldbook_budget_tokens" :min="0" :max="32000" /></el-form-item><el-form-item label="画像与记忆预算 tokens"><el-input-number v-model="form.memory_budget_tokens" :min="0" :max="16000" /></el-form-item><el-form-item label="知识资料预算 tokens"><el-input-number v-model="form.knowledge_budget_tokens" :min="0" :max="16000" /></el-form-item></div>
+      <el-alert v-if="form.allow_information_tools && form.retrieval_mode !== 'keyword'" title="语义检索需要已建立索引，模型调用工具时可能产生Embedding费用。" type="info" :closable="false" /></el-collapse-item>
+    <el-collapse-item title="高级运行限制" name="limits"><div class="form-two-columns"><el-form-item label="输入字节上限"><el-input-number v-model="form.context_bytes" :min="8000" :max="32000000" :step="8000" /></el-form-item><el-form-item label="整体容量触发比例"><el-input-number v-model="form.trigger_ratio" :min="0.5" :max="0.95" :step="0.01" /></el-form-item><el-form-item label="待处理输入上限"><el-input-number v-model="form.pending_input_limit" :min="1" :max="500" /></el-form-item><template v-if="mode === 'continuity'"><el-form-item label="摘要输出上限 tokens"><el-input-number v-model="form.summary_max_tokens" :min="256" :max="16000" /></el-form-item><el-form-item label="摘要时限（秒）"><el-input-number v-model="form.summary_timeout" :min="10" :max="300" /></el-form-item><el-form-item label="单次运行摘要批次上限"><el-input-number v-model="form.summary_max_batches" :min="1" :max="64" /></el-form-item></template></div></el-collapse-item>
+  </el-collapse>
+</template>
