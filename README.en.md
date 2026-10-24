@@ -1,4 +1,4 @@
-# RP — Private-message roleplay with persistent plans
+# Linger — Private-message roleplay with persistent plans
 
 [中文](README.md) · [English](README.en.md)
 
@@ -124,4 +124,4 @@ Model protocols, providers and some infrastructure were extracted or adapted fro
 
 Dependencies are listed in `backend/pyproject.toml`, `web/package.json` and `web/package-lock.json` and retain their own licenses. Downloaded reference projects and game dialogue corpora are not bundled. A project license has not yet been selected for this source publication.
 
-Protocol and design references include [OneBot v11](https://github.com/botuniverse/onebot-11), [NapCatQQ](https://github.com/NapNeko/NapCatQQ), [SillyTavern](https://github.com/SillyTavern/SillyTavern), [HDS-Interlude](https://github.com/ISEKAI-MomoiCore/HDS-Interlude), [Character Card V2](https://github.com/malfoyslastname/character-card-spec-v2) and [Character Card V3](https://github.com/kwaroran/character-card-spec-v3). These repositories are not redistributed with this snapshot.
+
